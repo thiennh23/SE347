@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng ký thông tin việc làm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 100%;
+            max-width: 800px;
+            margin: auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid #006400;
+        }
+        th {
+            background-color: #006400;
+            color: white;
+            text-align: left;
+            font-size: 20px;
+        }
+        td {
+            font-size: 14px;
+        }
+        .section-header {
+            background-color: #006400;
+            color: white;
+            font-weight: bold;
+            padding: 5px;
+        }
+        input[type="text"], input[type="date"], input[type="number"], select, textarea {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #006400;
+        }
+        input[type="submit"], input[type="reset"] {
+            padding: 5px 15px;
+            background-color: #006400;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover, input[type="reset"]:hover {
+            background-color: #004d00;
+        }
+    </style>
+</head>
+<body>
+    <form action="submit_form.php" method="post">
+        <table>
+            <!-- title -->
+            <tr>
+                <th colspan="2" style="text-align: center;">ĐĂNG KÝ THÔNG TIN VIỆC LÀM</th>
+            </tr>
+            
+            <!-- Personal Information -->
+            <tr>
+                <td colspan="2" class="section-header">Thông tin cá nhân</td>
+            </tr>
+            <tr>
+                <td>* Họ & Tên:</td>
+                <td><input type="text" name="full_name" required></td>
+            </tr>
+            <tr>
+                <td>* Ngày tháng năm sinh:</td>
+                <td><input type="date" name="dob" required></td>
+            </tr>
+            <tr>
+                <td>* Giới tính:</td>
+                <td>
+                    <select name="gender">
+                        <option value="Nam">Nam</option>
+                        <option value="Nữ">Nữ</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>* Tình trạng hôn nhân:</td>
+                <td>
+                    <select name="marital_status">
+                        <option value="Độc thân">Độc thân</option>
+                        <option value="Đã kết hôn">Đã kết hôn</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <!-- Contact Information -->
+            <tr>
+                <td colspan="2" class="section-header">Thông tin liên lạc</td>
+            </tr>
+            <tr>
+                <td>* Địa chỉ:</td>
+                <td><input type="text" name="address" required></td>
+            </tr>
+            <tr>
+                <td>* Tỉnh/Thành phố:</td>
+                <td><input type="text" name="city" required></td>
+            </tr>
+            <tr>
+                <td>Số điện thoại:</td>
+                <td><input type="text" name="phone"></td>
+            </tr>
+            <tr>
+                <td>Số điện thoại di động:</td>
+                <td><input type="text" name="mobile"></td>
+            </tr>
+            <tr>
+                <td>* Email:</td>
+                <td><input type="email" name="email" required></td>
+            </tr>
+            
+            <!-- Education-->
+            <tr>
+                <td colspan="2" class="section-header">Trình độ học vấn</td>
+            </tr>
+            <tr>
+                <td>* Trình độ học vấn:</td>
+                <td>
+                    <select name="education_level" required>
+                        <option value="Trung học phổ thông">Trung học phổ thông</option>
+                        <option value="Cao đẳng">Cao đẳng</option>
+                        <option value="Đại học">Đại học</option>
+                        <option value="Cao học">Cao học</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>* Thông tin về học vấn:</td>
+                <td><textarea name="education_info" rows="4" required></textarea></td>
+            </tr>
+            <tr>
+                <td>Ngoại ngữ:</td>
+                <td><textarea name="foreign_languages" rows="2"></textarea></td>
+            </tr>
+            <tr>
+                <td>Kỹ năng:</td>
+                <td><textarea name="skills" rows="2"></textarea></td>
+            </tr>
+            
+            <!-- Work -->
+            <tr>
+                <td colspan="2" class="section-header">Kinh nghiệm làm việc</td>
+            </tr>
+            <tr>
+                <td>Số năm kinh nghiệm:</td>
+                <td><input type="number" name="years_of_experience" min="0"></td>
+            </tr>
+            <tr>
+                <td>Kinh nghiệm làm việc:</td>
+                <td><textarea name="work_experience" rows="3"></textarea></td>
+            </tr>
+            
+            <!-- Personal Aspirations -->
+            <tr>
+                <td colspan="2" class="section-header">Mong muốn của bản thân</td>
+            </tr>
+            <tr>
+                <td>Việc làm mong muốn:</td>
+                <td><input type="text" name="desired_job"></td>
+            </tr>
+            <tr>
+                <td>* Mức lương thỏa thuận:</td>
+                <td><input type="number" name="desired_salary" required> VND</td>
+            </tr>
+            
+            <!-- Buttons -->
+            <tr>
+                <td colspan="2" style="text-align: center;">
+                    <input type="submit" value="Gửi hồ sơ">
+                    <input type="reset" value="Xóa Form">
+                </td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
